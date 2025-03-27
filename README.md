@@ -22,7 +22,7 @@ Monitoring the frequency of certain events (e.g., high-temperature readings) in 
 
 Detecting sudden spikes in transactions (1s represent flagged transactions).
 
-##Explanation
+## Explanation
 1. Buckets Structure
 
 Buckets keep track of 1s in exponentially increasing sizes (1, 2, 4, 8, ...).
@@ -41,7 +41,7 @@ Old entries (outside the window) are removed to keep the count relevant.
 
 The estimated count sums the sizes of all buckets, adjusting for partial overage of the oldest bucket.
 
-##Advantages of DGIM
+## Advantages of DGIM
 Memory Efficient: Uses O(log N) space.
 
 Fast Updates: Each new bit is processed in O(log N) time.
