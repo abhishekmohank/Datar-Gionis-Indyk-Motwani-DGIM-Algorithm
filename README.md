@@ -22,3 +22,22 @@ Monitoring the frequency of certain events (e.g., high-temperature readings) in 
 
 Detecting sudden spikes in transactions (1s represent flagged transactions).
 
+##Explanation
+1. Buckets Structure
+
+Buckets keep track of 1s in exponentially increasing sizes (1, 2, 4, 8, ...).
+
+Each bucket stores the timestamp of the most recent 1 in its range.
+
+2. Merging Buckets
+
+If a bucket has more than two entries, the oldest two are merged into a higher-level bucket.
+
+3. Sliding Window Maintenance
+
+Old entries (outside the window) are removed to keep the count relevant.
+
+4. Counting 1s
+
+The estimated count sums the sizes of all buckets, adjusting for partial
+
