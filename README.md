@@ -39,5 +39,14 @@ Old entries (outside the window) are removed to keep the count relevant.
 
 4. Counting 1s
 
-The estimated count sums the sizes of all buckets, adjusting for partial
+The estimated count sums the sizes of all buckets, adjusting for partial overage of the oldest bucket.
+
+##Advantages of DGIM
+Memory Efficient: Uses O(log N) space.
+
+Fast Updates: Each new bit is processed in O(log N) time.
+
+Bounded Error: The estimated count is at least true count - 50%.
+
+This implementation is useful for real-time stream processing where exact counting is impractical. Adjust window_size based on your application's needs.
 
